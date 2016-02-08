@@ -6,11 +6,16 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+import android.util.Log;
 
 import com.xgc1986.ripplebutton.widget.RippleButton;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    private Button playButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +25,15 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState != null) {
             return;
         }
+        playButton = (Button) findViewById(R.id.playButton);
+        playButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "helloolleh",
+                        Toast.LENGTH_LONG).show();
+                playPressed(null);
+            }
+        });
 
     }
 
@@ -32,6 +46,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void playPressed(View view) {
         //TODO: Put to start game play activity
+        //startActivity();
+        Log.d("VIVZ", "HELLO HELLO");
+        Intent downloadIntent = new Intent(this, PlayActivity.class);
+        //downloadIntent.setData(Uri.parse(fileUrl));
+        //startService(downloadIntent);
+        startActivity(downloadIntent);
+
     }
 
     @Override

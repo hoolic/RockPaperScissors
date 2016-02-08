@@ -21,5 +21,13 @@
             android:layout_weight="0"
             android:src="@drawable/choose_wisely" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:onClick= "playPressed"
+            android:text="Play"
+            android:id="@+id/playButton"/>
+
     </LinearLayout>
 </RelativeLayout>
